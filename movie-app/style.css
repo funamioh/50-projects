@@ -21,6 +21,15 @@ header {
   display: flex;
   justify-content: flex-end;
   background-color: var(--primary-color);
+  background-image: url("./image/martin-de-arriba-qx6QtPOhO9I-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+}
+
+h1 {
+  margin: 0 20px;
 }
 
 .search {
@@ -138,4 +147,12 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
 }

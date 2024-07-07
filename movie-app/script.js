@@ -1,13 +1,15 @@
 const API_KEY = '48b62907193d71812ec943119737f5b7'
-const API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}&page=1`
+const defaultPageNumber = 1
+const API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}&page=`
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
-const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query="`
+const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`
 
 const form = document.getElementById('form')
 const search = document.getElementById('search')
 
 // get initial movies list when page is loaded
-getMovies(API_URL)
+getMovies(API_URL + defaultPageNumber)
+console.log(API_URL + defaultPageNumber);
 
 async function getMovies(url) {
   const res = await fetch(url)
@@ -72,4 +74,22 @@ function changeColorByRate(vote) {
   } else {
     return 'red'
   }
+}
+
+function pagination(pageNumber) {
+  console.log("pagination");
+  getMovies(API_URL + pageNumber)
+  console.log(pageNumber, "page numberやで");
+
+  const pages = document.querySelectorAll('.page')
+
+  pages.forEach((page) => {
+    page.addEventListener('click', (e) => {
+      // remove 'active' class from all pages
+      pages.forEach(page => page.classList.remove('active'))
+
+      // add 'active' class to the clicked page
+      e.target.classList.add('active')
+    })
+  })
 }

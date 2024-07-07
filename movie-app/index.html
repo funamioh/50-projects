@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movie App</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/c8ce4fa207.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
+    <h1><i class="fa-solid fa-film"></i> Film Finder</h1>
     <form id="form">
       <input type="text" id="search" class="search" placeholder="Search">
     </form>
@@ -33,15 +35,19 @@
 
   <div class="pagination">
     <a href="#">&laquo;</a>
-    <a href="#" class="active">1</a>
-    <a href="#">2</a>
-    <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
-    <a href="#">6</a>
+    <a href="#" onclick="pagination(1)" class="page active">1</a>
+    <a href="#" onclick="pagination(2)" class="page">2</a>
+    <a href="#" onclick="pagination(3)" class="page">3</a>
+    <a href="#" onclick="pagination(4)" class="page">4</a>
+    <a href="#" onclick="pagination(5)" class="page">5</a>
+    <a href="#" onclick="pagination(6)" class="page">6</a>
     <a href="#">&raquo;</a>
   </div>
 </div>
+
+<footer>
+  <p>This is coded by <a href="https://github.com/funamioh" target="_blank">Miho Funayama</a></p>
+</footer>
 
   <script src="script.js"></script>
 </body>
